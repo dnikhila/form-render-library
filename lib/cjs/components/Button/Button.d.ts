@@ -7,7 +7,7 @@ interface ButtonProps {
         variant?: "contained" | "outlined";
         handleClick?: () => void;
         heading: string;
-        styles?: any;
+        size: "small" | "medium" | "large";
     };
 }
 declare function MuiButton({ options }: ButtonProps): React.JSX.Element;

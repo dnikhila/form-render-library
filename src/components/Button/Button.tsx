@@ -1,5 +1,5 @@
 import React from "react";
-// import Button from '@mui/material/Button';
+import Button from '@mui/material/Button';
 
 interface ButtonProps {
   options: {
@@ -8,23 +8,22 @@ interface ButtonProps {
     startIcon?: any;
     variant?: "contained" | "outlined";
     handleClick?: () => void;
-    heading: string;
-    styles?: any
+    heading: string,
+    size: "small" | "medium" | "large"
   }
 }
 
 function MuiButton({ options }: ButtonProps) {
-  const { heading, label, endIcon, startIcon, variant, handleClick, styles } = options;
-  console.log(heading, label, endIcon, startIcon, variant, handleClick, styles, "handleClick")
+  const { heading, label, endIcon, startIcon, variant, handleClick, size } = options;
+  console.log(heading, label, endIcon, startIcon, variant, handleClick, "handleClick")
   return (
     <div>
       {heading ?
         <p>{heading}</p>
         : null}
-      {/* <Button variant={variant} endIcon={endIcon} startIcon={startIcon} onClick={handleClick}>
+      <Button size={size} variant={variant} endIcon={endIcon} startIcon={startIcon} onClick={handleClick}>
         {label}
-      </Button> */}
-      <button style={styles} onClick={handleClick}>{label}</button>
+      </Button>
     </div>
   )
 }

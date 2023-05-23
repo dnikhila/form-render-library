@@ -1,6 +1,6 @@
 import React from "react";
 import { MuiButton, MuiTextField } from "../components";
-import RadioButtonsGroup from "../components/Radio";
+import RadioButtonsGroup from "../components/Radio/Radio";
 
 interface FormFields {
   type: string;
