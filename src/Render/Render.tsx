@@ -1,10 +1,10 @@
-import React from "react";
-import { MuiButton, MuiTextField } from "../components";
-import RadioButtonsGroup from "../components/Radio/Radio";
+import React from 'react'
+import { MuiButton, MuiTextField, MuiRadioGroup } from '../components'
+import { Heading, FormDiv } from './styles'
 
 interface FormFields {
-  type: string;
-  options: any;
+  type: string
+  options: any
 }
 
 interface FactoryProps {
@@ -12,16 +12,16 @@ interface FactoryProps {
 }
 
 function Factory({ formFields }: FactoryProps) {
-  console.log(formFields, "formFields")
+  console.log(formFields, 'formFields')
   switch (formFields.type) {
-    case "Button":
-      return <MuiButton options={formFields.options} />;
-    case "Radio":
-      return <RadioButtonsGroup />;
-    case "TextField":
+    case 'Button':
+      return <MuiButton options={formFields.options} />
+    case 'Radio':
+      return <MuiRadioGroup options={formFields.options} />
+    case 'TextField':
       return <MuiTextField options={formFields.options} />
     default:
-      return <div>Reload...</div>;
+      return <div>Invalid Request</div>
   }
 }
 
@@ -32,13 +32,16 @@ interface Props {
 function RenderForm({ formFields }: Props) {
   console.log(formFields, 'formFields')
   return (
-    <div>
+    <FormDiv>
       {formFields.map((field, i) => {
         return (
-          <Factory key={i} formFields={field} />
+          <>
+            <Heading>{field.options.heading}</Heading>
+            <Factory key={i} formFields={field} />
+          </>
         )
       })}
-    </div>
+    </FormDiv>
   )
 }
 export default RenderForm

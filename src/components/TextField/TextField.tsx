@@ -10,30 +10,27 @@ interface Props {
         inputProps?: any;
         value?: string;
         disabled?: boolean;
-        heading?: string
+        heading?: string;
+        size: "small" | "medium"
     }
 }
 
 function MuiTextField({ options }: Props) {
-    const { heading, handleChange, placeholder, rows, styles, value, disabled } = options
+    const { handleChange, placeholder, rows, styles, value, disabled, size } = options
     return (
-        <div>
-            {heading ?
-                <p>{heading}</p>
-                : null}
-            <TextField
-                id="description"
-                placeholder={placeholder}
-                minRows={rows}
-                multiline
-                draggable={false}
-                sx={styles}
-                onChange={handleChange}
-                inputProps={{ maxLength: 500 }}
-                value={value}
-                disabled={disabled}
-            />
-        </div>
+        <TextField
+            id="description"
+            placeholder={placeholder}
+            minRows={rows}
+            multiline
+            draggable={false}
+            sx={styles}
+            onChange={handleChange}
+            inputProps={{ maxLength: 500 }}
+            value={value}
+            disabled={disabled}
+            size={size}
+        />
     )
 }
 

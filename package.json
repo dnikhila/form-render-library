@@ -3,6 +3,8 @@
   "version": "1.1.0",
   "license": "MIT",
   "scripts": {
+    "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
+    "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
     "build": "yarn build:esm && yarn build:cjs",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir lib/cjs"
@@ -20,6 +22,14 @@
   "devDependencies": {
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
+    "@types/styled-components": "^5.1.26",
+    "@typescript-eslint/eslint-plugin": "^5.59.6",
+    "@typescript-eslint/parser": "^5.59.6",
+    "eslint": "^8.41.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^5.0.4"
@@ -29,6 +39,11 @@
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.13.1",
     "@mui/styled-engine-sc": "^5.12.0",
-    "styled-components": "^5.3.10"
+    "prettier": "^2.8.8",
+    "styled-components": "^5.3.9"
+  },
+  "resolutions": {
+    "styled-components": "^5",
+    "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest"
   }
 }

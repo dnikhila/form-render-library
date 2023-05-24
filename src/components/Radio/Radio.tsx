@@ -1,23 +1,39 @@
-import * as React from 'react';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
+import * as React from 'react'
+import Radio from '@mui/material/Radio'
+import RadioGroup from '@mui/material/RadioGroup'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import FormControl from '@mui/material/FormControl'
+import FormLabel from '@mui/material/FormLabel'
 
-export default function RadioButtonsGroup() {
+interface Option {
+  id: string
+  label: string
+  value: string
+}
+interface Props {
+  options: {
+    radioOptions: Option[]
+    selectedOption: Option[]
+    handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+  }
+}
+
+export default function MuiRadioGroup({ options }: Props) {
+  const { radioOptions, selectedOption, handleChange } = options
+
   return (
     <FormControl>
-      <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
+      <FormLabel id='demo-controlled-radio-buttons-group'>Gender</FormLabel>
       <RadioGroup
-        aria-labelledby="demo-radio-buttons-group-label"
-        defaultValue="female"
-        name="radio-buttons-group"
+        aria-labelledby='demo-controlled-radio-buttons-group'
+        name='controlled-radio-buttons-group'
+        value={selectedOption}
+        onChange={handleChange}
       >
-        <FormControlLabel value="female" control={<Radio />} label="Female" />
-        <FormControlLabel value="male" control={<Radio />} label="Male" />
-        <FormControlLabel value="other" control={<Radio />} label="Other" />
+        {radioOptions.map((item: Option, index) => {
+          return <FormControlLabel key={index} value={item.value} control={<Radio />} label={item.label} />
+        })}
       </RadioGroup>
     </FormControl>
-  );
+  )
 }
