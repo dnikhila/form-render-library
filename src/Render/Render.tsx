@@ -1,5 +1,6 @@
 import React from 'react'
 import { MuiButton, MuiTextField, MuiRadioGroup, ButtonProps, RadioProps, TextFieldProps } from '../components'
+import { Heading } from './styles'
 // import { FormDiv } from './styles'
 
 interface FactoryProps {
@@ -23,7 +24,7 @@ function Factory({ type, data }: FactoryProps) {
 interface Props {
   button?: ButtonProps
   radio?: RadioProps
-  textfield?: TextFieldProps
+  textField?: TextFieldProps
 }
 
 function RenderForm(layouts: Props) {
@@ -34,6 +35,7 @@ function RenderForm(layouts: Props) {
         {Object.entries(layouts).map(([key, value]) => {
           return (
             <>
+              <Heading>{value.heading}</Heading>
               <Factory type={key} data={value} />
             </>
           )
