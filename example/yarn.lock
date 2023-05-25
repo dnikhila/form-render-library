@@ -4815,10 +4815,10 @@ form-data@^3.0.0:
     combined-stream "^1.0.8"
     mime-types "^2.1.12"
 
-forms-render@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/forms-render/-/forms-render-1.5.0.tgz#fb4a3c7a008bccfa1459c695cc81d94202160800"
-  integrity sha512-+6e1NqQyTGUPKPiEWdArY8wPIIVoLgbFJwH/e08fa0gnGBFY71qcAZUwQegFJzMErFeYKKHcES9ELo4OPaz+Bw==
+forms-render@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/forms-render/-/forms-render-1.6.0.tgz#964ca257003ec32bf675888ac94dc77ad0cd7d54"
+  integrity sha512-L3HycBboFGLqEfd1fFGrUR6hsZnfe6SzUotun2a15iY2hQgxawHARmF05S2fcN83BzR/NNisgyPWyzO+xDGL/A==
   dependencies:
     "@emotion/react" "^11.11.0"
     "@emotion/styled" "^11.11.0"
