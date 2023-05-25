@@ -6,6 +6,7 @@ export interface RadioOption {
 }
 export interface RadioProps {
     radioOptions: RadioOption[];
-    selectedOption: RadioOption[];
+    selectedOption: RadioOption;
     handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    heading: string;
 }
