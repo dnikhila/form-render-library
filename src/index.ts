@@ -1,1 +1,1 @@
-export { default as RenderForm } from "./Render";
+export { RenderForm } from './Render'

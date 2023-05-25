@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 // import {RenderForm}
-import RenderForm from 'forms-render'
+import RenderForm from 'forms-render/dist/esm/Render/index'
 
 function Factory(type: string, data: any) {
   switch (type) {
@@ -41,6 +41,7 @@ function App() {
   return (
     <div>
       {/* <RenderForm layouts={layouts} /> */}
+      <RenderForm />
     </div>
   )
 }

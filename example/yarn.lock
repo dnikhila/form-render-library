@@ -4815,10 +4815,8 @@ form-data@^3.0.0:
     combined-stream "^1.0.8"
     mime-types "^2.1.12"
 
-forms-render@^1.6.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/forms-render/-/forms-render-1.6.0.tgz#964ca257003ec32bf675888ac94dc77ad0cd7d54"
-  integrity sha512-L3HycBboFGLqEfd1fFGrUR6hsZnfe6SzUotun2a15iY2hQgxawHARmF05S2fcN83BzR/NNisgyPWyzO+xDGL/A==
+forms-render@..:
+  version "1.8.0"
   dependencies:
     "@emotion/react" "^11.11.0"
     "@emotion/styled" "^11.11.0"
