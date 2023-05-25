@@ -21,7 +21,7 @@ interface Props {
   textfield?: TextFieldProps
 }
 
-function RenderForm(layouts: Props) {
+const RenderForm: React.FunctionComponent = (layouts: Props) => {
   return (
     <FormDiv>
       <div style={{ padding: '3rem' }}>

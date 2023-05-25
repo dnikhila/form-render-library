@@ -40,16 +40,7 @@ function App() {
 
   return (
     <div>
-      <div style={{ padding: '3rem' }}>
-        {Object.entries(layouts).map(([key, value]) => {
-          return (
-            <>
-              {Factory(key, value)}
-              {/* <Factory type={key} data={value} /> */}
-            </>
-          )
-        })}
-      </div>
+      <RenderForm layouts={layouts} />
     </div>
   )
 }
