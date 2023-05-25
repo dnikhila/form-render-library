@@ -9,11 +9,11 @@ interface FactoryProps {
 
 function Factory({ type, data }: FactoryProps) {
   switch (type) {
-    case 'Button':
+    case 'button':
       return <MuiButton options={data} />
-    case 'Radio':
+    case 'radio':
       return <MuiRadioGroup options={data} />
-    case 'TextField':
+    case 'textField':
       return <MuiTextField options={data} />
     default:
       return <div>Invalid Request</div>
