@@ -1,6 +1,6 @@
 import React from 'react'
 import { MuiButton, MuiTextField, MuiRadioGroup, ButtonProps, RadioProps, TextFieldProps } from '../components'
-import { FormDiv } from './styles'
+// import { FormDiv } from './styles'
 
 interface FactoryProps {
   type: string
@@ -29,7 +29,7 @@ interface Props {
 function RenderForm(layouts: Props) {
   console.log(Object.entries(layouts), layouts, 'layouts')
   return (
-    <FormDiv>
+    <div style={{ width: '80%' }}>
       <div style={{ padding: '3rem' }}>
         {Object.entries(layouts).map(([key, value]) => {
           return (
@@ -39,7 +39,7 @@ function RenderForm(layouts: Props) {
           )
         })}
       </div>
-    </FormDiv>
+    </div>
   )
 }
 export default RenderForm
