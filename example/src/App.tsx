@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import { RenderForm } from "forms-render";
+// import {RenderForm}
+import RenderForm from "forms-render"
 
 function App() {
   // console.log(RenderForm, 'RenderForm')

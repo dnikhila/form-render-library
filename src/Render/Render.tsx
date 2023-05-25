@@ -1,46 +1,44 @@
 import React from 'react'
-import { MuiButton, MuiTextField, MuiRadioGroup } from '../components'
-import { Heading, FormDiv } from './styles'
-
-interface FormFields {
-  type: string
-  options: any
-}
+import { MuiButton, MuiTextField, MuiRadioGroup, ButtonProps, RadioProps, TextFieldProps } from '../components'
+import { FormDiv } from './styles'
 
 interface FactoryProps {
-  formFields: FormFields
+  type: string
+  data: any
 }
 
-function Factory({ formFields }: FactoryProps) {
-  console.log(formFields, 'formFields')
-  switch (formFields.type) {
+function Factory({ type, data }: FactoryProps) {
+  switch (type) {
     case 'Button':
-      return <MuiButton options={formFields.options} />
+      return <MuiButton options={data} />
     case 'Radio':
-      return <MuiRadioGroup options={formFields.options} />
+      return <MuiRadioGroup options={data} />
     case 'TextField':
-      return <MuiTextField options={formFields.options} />
+      return <MuiTextField options={data} />
     default:
       return <div>Invalid Request</div>
   }
 }
 
 interface Props {
-  formFields: FormFields[]
+  button?: ButtonProps
+  radio?: RadioProps
+  textfield?: TextFieldProps
 }
 
-function RenderForm({ formFields }: Props) {
-  console.log(formFields, 'formFields')
+function RenderForm(layouts: Props) {
+  console.log(Object.entries(layouts), layouts, 'layouts')
   return (
     <FormDiv>
-      {formFields.map((field, i) => {
-        return (
-          <>
-            <Heading>{field.options.heading}</Heading>
-            <Factory key={i} formFields={field} />
-          </>
-        )
-      })}
+      <div style={{ padding: '3rem' }}>
+        {Object.entries(layouts).map(([key, value]) => {
+          return (
+            <>
+              <Factory type={key} data={value} />
+            </>
+          )
+        })}
+      </div>
     </FormDiv>
   )
 }
