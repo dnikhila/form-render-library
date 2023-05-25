@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 // import {RenderForm}
-import RenderForm from 'forms-render/dist/esm/Render/index'
+import RenderForm from 'forms-render'
 
 function Factory(type: string, data: any) {
   switch (type) {
